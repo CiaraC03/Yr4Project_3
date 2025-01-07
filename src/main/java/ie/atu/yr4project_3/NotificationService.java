@@ -12,11 +12,18 @@ public class NotificationService {
 
     private NotificationRepository notificationRepository;
 
-    public NotificationService(NotificationRepository notificationRepository){
+    private NotificationClient notificationClient;
+
+    public NotificationService(NotificationRepository notificationRepository, NotificationClient notificationClient){
         this.notificationRepository = notificationRepository;
+        this.notificationClient = notificationClient;
     }
 
     public List<Notification> createNewNotification(Notification notification){
+        User user = notificationClient.getUserId(notification.getUserId());
+        if (user == null) {
+            throw new IllegalArgumentException("User with userId " + user.getUserId() + " does not exist.");
+        }
         notificationRepository.save(notification);
         return notificationRepository.findAll();
     }

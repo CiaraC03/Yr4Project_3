@@ -4,8 +4,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "task-service", url = "${feign.user-service.url}")
+@FeignClient(name = "user-service", url = "http://localhost:8080")
 public interface NotificationClient {
-    @GetMapping("/{Id}")
-    String getTaskById(@PathVariable Long userId);
+    @GetMapping("/users/{userId}")
+    User getUserId(@PathVariable Long userId);
 }
+
