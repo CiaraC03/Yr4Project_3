@@ -13,8 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "notification")
 public class Notification {
-    @Id
-    private Long id;
     @NotNull(message = "ID cant be null")
     private Long userId;
     @NotBlank(message = "Message can't be blank")
