@@ -24,6 +24,7 @@ public class NotificationService {
         if (user == null) {
             throw new IllegalArgumentException("User with userId " + user.getUserId() + " does not exist.");
         }
+        validateNotification(notification);
         notificationRepository.save(notification);
         return notificationRepository.findAll();
     }
@@ -39,5 +40,13 @@ public class NotificationService {
         return null;
     }
 
+    private void validateNotification(Notification notification){
+        if (notification.getMessage() == null || notification.getMessage().isEmpty()){
+            throw new IllegalArgumentException("Message can't be blank");
+        }
+        if (notification.getType() == null || notification.getType().isEmpty()){
+            throw new IllegalArgumentException("Type can't be blank");
+        }
 
+    }
 }

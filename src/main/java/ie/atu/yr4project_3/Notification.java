@@ -17,6 +17,6 @@ public class Notification {
     private Long userId;
     @NotBlank(message = "Message can't be blank")
     private String message;
-    @NotBlank(message = "Notification can't be blank")
+    @NotBlank(message = "Type can't be blank")
     private String type;
 }
