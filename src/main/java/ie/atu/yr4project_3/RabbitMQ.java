@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQ {
     @Bean
-    public Queue productQueue(){
-        return new Queue("notificationQueue", false);
+    public Queue userQueue(){
+        return new Queue("userQueue", true);
     }
 
     @Bean

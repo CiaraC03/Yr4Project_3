@@ -11,17 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
-
-        @NotNull(message = "User Id can't be blank")
         private Long userId;
-        @NotBlank(message = "Name can't be blank")
+
         private String name;
-        @NotBlank(message = "Last name can't be blank")
+
         private String lastName;
-        @Email(message = "Must be a valid email")
+
         private String email;
-        @Positive(message = "Number must be positive")
+
         private String num;
 
 
