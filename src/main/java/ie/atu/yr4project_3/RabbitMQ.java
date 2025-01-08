@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQ {
     @Bean
     public Queue userQueue(){
-        return new Queue("userQueue", true);
+        return new Queue("userQueue", false);
     }
 
     @Bean

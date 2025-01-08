@@ -29,13 +29,13 @@ public class NotificationService {
         return notificationRepository.findAll();
     }
 
-    public List<Notification> findNotificationsByUserID(Long userID){
-        return notificationRepository.findByUserId(userID);
+    public List<Notification> findNotificationsByUserID(Long userId){
+        return notificationRepository.findByUserId(userId);
     }
 
-    public List<Notification> deleteNotifications(Long id){
-        if(notificationRepository.existsById(id)){
-            notificationRepository.deleteById(id);
+    public List<Notification> deleteNotifications(Long userid){
+        if(notificationRepository.existsById(userid)){
+            notificationRepository.deleteById(userid);
         }
         return null;
     }

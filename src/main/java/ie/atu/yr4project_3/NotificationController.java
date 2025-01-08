@@ -34,8 +34,8 @@ public class NotificationController {
     }
 
     @DeleteMapping("/delete/notifications/{userId}")
-    public ResponseEntity<List<Notification>> deleteNotifications(@PathVariable Long id){
-        List<Notification> notificationList = notificationService.deleteNotifications(id);
+    public ResponseEntity<List<Notification>> deleteNotifications(@PathVariable Long userId){
+        List<Notification> notificationList = notificationService.deleteNotifications(userId);
         return ResponseEntity.ok(notificationList);
     }
 
